@@ -31,7 +31,7 @@ class CoreController extends Controller
      */
     public function manageErrorAction(Request $request, \Exception $exception)
     {
-        if ($request->server->get('REQUEST_SCHEME') == 'http' && $this->getParameter('schemes')) {
+        if ($request->server->get('REQUEST_SCHEME') == 'http' && $this->getParameter('schemes') == 'https') {
             $route = 'https://' . $request->server->get('SERVER_NAME') . $request->getRequestUri();
             return new RedirectResponse($route);
         }

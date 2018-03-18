@@ -6,3 +6,5 @@ ENV WEBROOT /var/www/html/web
 WORKDIR /var/www/html
 
 COPY . ./
+
+RUN rm web/app_dev.php

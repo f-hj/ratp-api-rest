@@ -72,7 +72,10 @@ class StationsService extends ApiService implements ApiDataInterface
             /** @var \Ratp\Station $station */
             $stations[] = [
                 'slug' => NamesHelper::slugify($station->getName()),
-                'name' => $station->getName()
+                'name' => $station->getName(),
+                'id' => $station->getId(),
+                'idsNextA' => $station->getIdsNextA(),
+                'idsNextR' => $station->getIdsNextR(),
             ];
         }
 
